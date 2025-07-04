@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :diagnoses, only: [:new, :create]
+  resources :diagnoses, only: [ :new, :create ]
   get "/diagnosis/:token", to: "diagnoses#result", as: :diagnosis
   get "static_pages/top"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

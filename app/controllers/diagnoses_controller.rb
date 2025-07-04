@@ -32,7 +32,7 @@ class DiagnosesController < ApplicationController
     sleepiness_score: 0,
     nod_score: 0,
     stealth_score: 0,
-    fade_score: 0,
+    fade_score: 0
   }
 
     answer_params.each do |_, value|

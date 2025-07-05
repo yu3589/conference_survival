@@ -1,7 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  token: MyString
   sharpness_score: 1
   sleepiness_score: 1
   nod_score: 1
@@ -10,7 +9,6 @@ one:
   result_type: 1
 
 two:
-  token: MyString
   sharpness_score: 1
   sleepiness_score: 1
   nod_score: 1

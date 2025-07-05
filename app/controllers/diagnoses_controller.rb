@@ -47,6 +47,11 @@ class DiagnosesController < ApplicationController
     result
   end
 
+  def result
+    @diagnosis = Diagnosis.find_by(token: params[:token])
+    redirect_to root_path, alert: "診断が見つかりませんでした。" unless @diagnosis
+  end
+
   private
     def question_params
       params.require(:answers).permit(:question1, :question2, :question3, :question4, :question5).to_h

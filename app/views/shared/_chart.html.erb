@@ -1,0 +1,39 @@
+<canvas id="radarChart" width="400" height="400"></canvas>
+
+<script>
+  document.addEventListener("turbo:load", function () {
+    const ctx = document.getElementById("radarChart");
+    if (!ctx) return;
+
+    if (Chart.getChart(ctx)) {
+      Chart.getChart(ctx).destroy();
+    }
+
+      new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ["発言の切れ味", "寝落ちスキル", "適当相槌力", "内職バレない力", "空気読み回避力"],
+          datasets: [{
+            label: "会議サバイバルスキル",
+            data: [<%= data.map(&:to_i).join(", ") %>],
+            backgroundColor: 'rgba(65, 105, 225, 0.2)',
+            borderColor: 'rgba(65, 105, 225, 0.2)',
+            borderWidth: 1,
+            pointBackgroundColor: 'rgba(65, 105, 225, 0.2)'
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            r: {
+              min: 0,
+              max: 5,
+              ticks: {
+                stepSize: 1
+              }
+            }
+          }
+        }
+      });
+    });
+</script>

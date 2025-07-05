@@ -10,8 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 0) do
+ActiveRecord::Schema[7.2].define(version: 2025_07_04_023037) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "diagnoses", force: :cascade do |t|
+    t.string "token"
+    t.integer "sharpness_score"
+    t.integer "sleepiness_score"
+    t.integer "nod_score"
+    t.integer "stealth_score"
+    t.integer "fade_score"
+    t.integer "result_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_diagnoses_on_token", unique: true
+  end
 end

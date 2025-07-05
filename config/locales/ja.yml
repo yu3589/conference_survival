@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    attributes:
+      diagnosis:
+        result_type_labels:
+          sharpness: "ひらめき一閃タイプ"
+          sleepiness: "空中遊泳タイプ"
+          nod: "相槌マイスタータイプ"
+          stealth: "ステルス内職師タイプ"
+          fade: "空気フェードアウトタイプ"
+          balance: "万能対応タイプ"

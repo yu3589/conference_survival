@@ -1,3 +1,40 @@
-<div>
-  <canvas id="radarChart" width="100" height="100"></canvas>
-</div>
+<div class="p-2 md:p-6">
+  <div class="font-bold text-2xl text-neutral text-center pt-6">
+    🎯 会議サバイバルスキル診断結果
+  </div>
+    <div class="px-12 py-12 text-center text-neutral">
+    <div class="flex justify-center items-end flex-wrap gap-1 md:gap-2 text-base">
+        <span>あなたは...</span>
+        <span class="font-bold text-xl md:text-3xl text-primary pt-2">
+        <%= @diagnosis.result_type_label %>
+        </span>
+        <span class="text-base text-neutral">
+        でした！</span>
+    </div>
+    </div>
+  
+    <div class="flex justify-center">
+        <div class="w-full max-w-md">
+        <div class="p-4 border-gray-300 rounded-2xl bg-base-200">
+            <%= render "shared/chart",
+            chart_id: "radarChart",
+            data: [
+                @diagnosis.sharpness_score,
+                @diagnosis.sleepiness_score,
+                @diagnosis.nod_score,
+                @diagnosis.stealth_score,
+                @diagnosis.fade_score,
+            ] %>
+        </div>
+        </div>
+    </div>
+      <div class="flex justify-center p-8">
+        <%= link_to "もう一度診断する", new_diagnosis_path, class: "btn btn-secondary rounded-xl p-6 text-center" %>
+      </div>
+       <div class="flex justify-center p-2">
+        <%= link_to "トップに戻る", root_path, data: { turbo: false },
+        class: "btn btn-primary rounded-xl p-6 text-center" %>
+      </div>
+ </div>
+
+    

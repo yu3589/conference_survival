@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def default_meta_tags(url: "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751794356/conference_survival_top_jaj0mk.png")
+  def default_meta_tags
     {
       site: "会議サバイバル診断",
       title: "会議サバイバル診断",

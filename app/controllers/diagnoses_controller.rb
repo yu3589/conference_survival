@@ -3,6 +3,10 @@ class DiagnosesController < ApplicationController
     @diagnosis = Diagnosis.new
   end
 
+   def question_params
+      params.require(:answers).permit(:question1, :question2, :question3, :question4, :question5).to_h
+   end
+
   EXPECTED_QUESTION_COUNT = 5
 
   def create
@@ -20,7 +24,7 @@ class DiagnosesController < ApplicationController
     @diagnosis = Diagnosis.new(scores)
 
     if @diagnosis.save
-      redirect_to diagnosis_path(@diagnosis.token)
+      redirect_to diagnosis_path(@diagnosis.result_type, @diagnosis.token)
     else
       render :new
     end
@@ -49,11 +53,31 @@ class DiagnosesController < ApplicationController
 
   def result
     @diagnosis = Diagnosis.find_by(token: params[:token])
-    redirect_to root_path, alert: "診断が見つかりませんでした。" unless @diagnosis
-  end
 
-  private
-    def question_params
-      params.require(:answers).permit(:question1, :question2, :question3, :question4, :question5).to_h
+    unless @diagnosis
+      redirect_to root_path, alert: "診断が見つかりませんでした。" and return
     end
+
+    if @diagnosis.result_type != params[:result_type]
+      redirect_to diagnosis_path(@diagnosis.result_type, @diagnosis.token) and return
+    end
+
+    @result_type = @diagnosis.result_type
+    @token = @diagnosis.token
+
+    @url = case @diagnosis.result_type.to_sym
+    when :stealth
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791882/stealth_tbokdp.png"
+    when :fade
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791873/fade_mgulgm.png"
+    when :nod
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791865/nod_hfyldx.png"
+    when :sharpness
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791858/sharpness_je2fss.png"
+    when :sleepiness
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791844/sleepiness_ilyyjj.png"
+    else
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751793839/balance_nhz1t4.png"
+    end
+  end
 end

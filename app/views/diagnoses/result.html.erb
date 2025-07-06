@@ -1,3 +1,7 @@
+<% content_for :meta_tags do %>
+  <%= display_meta_tags(default_meta_tags(url: @url)) %>
+<% end %>
+
 <div class="p-2 md:p-6">
   <div class="font-bold text-3xl text-neutral text-center pt-6">
     🎯 診断結果

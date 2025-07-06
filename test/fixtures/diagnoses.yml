@@ -2,9 +2,9 @@
 
 one:
   token: abcdef
+  result_type: stealth
   sharpness_score: 1
   sleepiness_score: 1
   nod_score: 1
   stealth_score: 1
   fade_score: 1
-  result_type: 1

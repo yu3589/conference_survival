@@ -1,6 +1,6 @@
 <div class="p-2 md:p-6">
-  <div class="font-bold text-2xl text-neutral text-center pt-6">
-    🎯 会議サバイバルスキル診断結果
+  <div class="font-bold text-3xl text-neutral text-center pt-6">
+    🎯 診断結果
   </div>
     <div class="px-12 py-12 text-center text-neutral">
     <div class="flex justify-center items-end flex-wrap gap-1 md:gap-2 text-base">
@@ -28,13 +28,20 @@
         </div>
         </div>
     </div>
-      <div class="flex justify-center p-8">
-        <%= link_to "もう一度診断する", new_diagnosis_path, class: "btn btn-secondary rounded-xl p-6 text-center" %>
+      <div class="flex justify-center pt-4">
+        <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}diagnosis/#{@result_type}/#{@diagnosis.token}&text=#{CGI.escape("診断結果は【#{@diagnosis.result_type_label}】でした！\n\n#会議サバイバル診断\n#会サバ")}",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        class: "btn btn-accent rounded-xl p-8 text-center" do %>
+        <%= image_tag 'x.svg', class: 'mx-auto' %>
+            でシェア
+        <% end %>
       </div>
-       <div class="flex justify-center p-2">
-        <%= link_to "トップに戻る", root_path, data: { turbo: false },
-        class: "btn btn-primary rounded-xl p-6 text-center" %>
-      </div>
+
+    <div class="flex justify-center gap-4 p-8">
+    <%= link_to "もう一度診断する", new_diagnosis_path, class: "btn btn-secondary rounded-xl px-6 py-6 text-center" %>
+    <%= link_to "トップに戻る", root_path, data: { turbo: false }, class: "btn btn-primary rounded-xl px-6 py-6 text-center" %>
+    </div>
  </div>
 
     

@@ -1,23 +1,24 @@
 <div class="flex flex-col items-center justify-center p-6 max-w-3xl mx-auto">
-  <div class="px-12 py-4 text-lg md:text-xl text-neutral font-semibold mb-2">
+  <div class="px-12 py-4 text-lg md:text-2xl text-neutral font-semibold mb-2">
     📝 会議サバイバルスキル診断
   </div>
 
   <%= form_with url: diagnoses_path, method: :post do |f| %>
   <%= render "shared/flash_message" %>
-    <div class="flex justify-center items-center pb-4">
-      <div class="collapse collapse-arrow ring-2 ring-primary bg-secondary rounded-xl w-fit">
-        <input type="checkbox" />
-        <div class="collapse-title text-sm">
-          ⚠️ あなたのステータス
-        </div>
-        <div class="collapse-content text-left text-sm">
-          <div>・連勤：6日目</div>
-          <div>・集中力：3%</div>
-          <div>・二日酔いレベル：高</div>
-        </div>
+  <div class="flex justify-center items-center pb-4">
+    <div class="collapse collapse-arrow ring-2 ring-error bg-base-200 rounded-xl w-fit">
+      <input type="checkbox" checked />
+      <div class="collapse-title text-sm">
+        あなたのステータス
+      </div>
+      <div class="collapse-content text-left text-sm">
+        <div>・連勤：6日目</div>
+        <div>・集中力：3%</div>
+        <div>・二日酔いレベル：高</div>
+        <div class="mt-2">※ リモートで参加中</div>
       </div>
     </div>
+  </div>
 
     <fieldset class="form-control text-left text-neutral bg-base-200 rounded-4xl p-8 items-center w-full overflow-auto">
   

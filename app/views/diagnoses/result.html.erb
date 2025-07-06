@@ -33,7 +33,7 @@
         </div>
     </div>
       <div class="flex justify-center pt-4">
-        <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}diagnosis/#{@result_type}/#{@diagnosis.token}&text=#{CGI.escape("診断結果は【#{@diagnosis.result_type_label}】でした！\n\n#会議サバイバル診断\n#会サバ")}",
+        <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}diagnosis/#{@result_type}/#{@diagnosis.token}&text=#{CGI.escape("診断結果は【#{@diagnosis.result_type_label}】でした！\n#会議サバイバル診断 #会サバ")}",
         target: "_blank",
         rel: "noopener noreferrer",
         class: "btn btn-accent rounded-xl p-8 text-center" do %>

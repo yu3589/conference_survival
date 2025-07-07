@@ -75,7 +75,7 @@ class DiagnosesController < ApplicationController
     when :sharpness
       "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791858/sharpness_je2fss.png"
     when :sleepiness
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791844/sleepiness_ilyyjj.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751852248/sleepiness_fs1dmg.png"
     else
       "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751793839/balance_nhz1t4.png"
     end

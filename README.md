@@ -1,4 +1,4 @@
-# [会議サバイバル診断]([https://uho-quote.onrender.com](https://conference-survival.onrender.com/))
+# [会議サバイバル診断](https://conference-survival.onrender.com/)
 
 [![Image from Gyazo](https://i.gyazo.com/8bb67653dbf1953e4b5b098b6ae0d7c1.jpg)](https://gyazo.com/8bb67653dbf1953e4b5b098b6ae0d7c1)
 ## ■サービス概要

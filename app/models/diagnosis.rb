@@ -20,7 +20,7 @@ class Diagnosis < ApplicationRecord
   end
 
   def set_result_type
-    threshold = 70
+    threshold = 60
     scores = {
       sharpness: sharpness_score,
       sleepiness: sleepiness_score,
@@ -38,7 +38,7 @@ class Diagnosis < ApplicationRecord
     sorted_scores = scores.values.sort.reverse
     second_score = sorted_scores[1] || 0
 
-    if max_score - second_score < 15
+    if max_score - second_score < 5
       self.result_type = :balance
     else
       self.result_type = max_type

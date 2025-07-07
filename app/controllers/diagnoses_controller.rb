@@ -67,17 +67,17 @@ class DiagnosesController < ApplicationController
 
     @url = case @diagnosis.result_type.to_sym
     when :stealth
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791882/stealth_tbokdp.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857394/stealth_oh6x3o.png"
     when :fade
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791873/fade_mgulgm.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857391/fade_pxcskz.png"
     when :nod
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791865/nod_hfyldx.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857387/nod_v7bt3k.png"
     when :sharpness
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751791858/sharpness_je2fss.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857380/sharpness_cnjcem.png"
     when :sleepiness
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751852248/sleepiness_fs1dmg.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857378/sleepiness_fxirif.png"
     else
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751793839/balance_nhz1t4.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857399/balance_s5ksih.png"
     end
   end
 end

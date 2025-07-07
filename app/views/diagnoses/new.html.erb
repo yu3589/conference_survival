@@ -120,19 +120,19 @@
           <%= radio_button_tag "answers[question5]", "fade:25",
           @selected_answers&.dig("question5") == "fade:25",
             class: "radio radio-secondary radio-sm" %>
-          <span> 言いたいことはあるけど、なかなか送信ボタンが押せない</span>
+          <span>いつでも送れる準備だけはしてる</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question5]", "nod:15,stealth:10",
           @selected_answers&.dig("question5") == "nod:15,stealth:10",
           class: "radio radio-secondary radio-sm" %>
-          <span>「承知しました(Ctrl+C)」→ Ctrl+V連打で“在席感”キープ</span>
+          <span class="break-words whitespace-normal">「承知しました(Ctrl+C)」→ Ctrl+V連打で“在席感”キープ</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question5]", "sharpness:15,sleepiness:10",
           @selected_answers&.dig("question5") == "sharpness:15,sleepiness:10",
             class: "radio radio-secondary radio-sm" %>
-          <span>絵文字だけでどこまで会話できるか、謎の戦いをしてる</span>
+          <span class="break-words whitespace-normal">絵文字だけでどこまで会話できるか、謎の戦いをしてる</span>
         </label>
       </div>
 
@@ -148,7 +148,7 @@
           <%= radio_button_tag "answers[question6]", "sleepiness:20,stealth:5",
           @selected_answers&.dig("question6") == "sleepiness:20,stealth:5",
           class: "radio radio-secondary radio-sm" %>
-          <span> 最後の5分でなぜか覚醒</span>
+          <span>最後の5分でなぜか覚醒</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question6]", "fade:20",
@@ -176,7 +176,7 @@
           <%= radio_button_tag "answers[question7]", "stealth:5,nod:15",
           @selected_answers&.dig("question7") == "stealth:5,nod:15",
             class: "radio radio-secondary radio-sm" %>
-          <span>心の中で「この会議、ファイナルラウンド…！」と願う</span>
+          <span class="break-words whitespace-normal">心の中で「この会議、ファイナルラウンド…！」と願う</span>
         </label>
       </div>
 

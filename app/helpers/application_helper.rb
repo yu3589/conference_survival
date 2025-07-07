@@ -1,11 +1,11 @@
 module ApplicationHelper
-  def default_meta_tags(url: "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751794356/conference_survival_top_jaj0mk.png")
+  def default_meta_tags(url: "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751849504/conference_survival_gk6xcw.png")
     {
       site: "会議サバイバル診断",
       title: "会議サバイバル診断",
       reverse: true,
       charset: "utf-8",
-      description: "会議中、意識も集中力も残りわずか…。そんな極限状態で試される、あなたの“会議サバイバルスキル”を診断します。",
+      description: "長時間会議を生き抜くあなたの“会議サバイバルスキル”を診断します。",
       canonical: request.original_url,
       og: {
         site_name: :site,

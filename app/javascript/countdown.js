@@ -1,11 +1,11 @@
 function startCountdown() {
-  // ループの開始時点（6時間24分59秒）を秒に換算
-  const START_HOURS = 6;
+  // ループの開始時点
+  const START_HOURS = 3;
   const START_MINUTES = 24;
   const START_SECONDS = 59;
 
-  // ループの終了時点（5時間24分59秒）を秒に換算
-  const END_HOURS = 5;
+  // ループの終了時点
+  const END_HOURS = 2;
   const END_MINUTES = 24;
   const END_SECONDS = 59;
 

@@ -1,24 +1,25 @@
-# README
+# [会議サバイバル診断]([https://uho-quote.onrender.com](https://conference-survival.onrender.com/))
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Image from Gyazo](https://i.gyazo.com/8bb67653dbf1953e4b5b098b6ae0d7c1.jpg)](https://gyazo.com/8bb67653dbf1953e4b5b098b6ae0d7c1)
+## ■サービス概要
+長時間会議を生き抜くあなたの“会議サバイバルスキル”を診断。眠気や空気読みも武器に変えて、強みをユーモアで可視化します。
 
-Things you may want to cover:
+## ■ このサービスへの思い・作りたい理由
+前職で、どんなに疲れ切っていても長時間の会議に懸命に参加する友人の姿を見て、「十分すぎるほど頑張っている」と感じていました。しかし当の本人は、自分の力を発揮できなかったとにいつも落ち込んでいました。
+私は、たとえ発言が少なかったとしても、寝そうになっていたとしても、そこには“その人なりのスキル”や“生き抜く力”があると思いました。「ダメな人間なんだ」と決めつける前に、少しふざけた切り口でも、それを強みとして見つけて笑って認め合えるような場を作りたくてこの診断アプリを作りました。
+ 
+## ■ ユーザー層について
+・社会人・学生など、長時間の会議や打ち合わせに参加する人
+・疲れた状態でも会議に出ざるを得ない人
+・自分の会議中の行動パターンを振り返りたい、あるいはネタとしてシェアして楽しみたい人
 
-* Ruby version
+## ■ 特徴
+・診断結果をユーモラスなタイプ名とレーダーチャートで視覚化し、SNS上でも直感的に伝わるようにしました。  
+・“強みじゃない強み”を可視化することで共感と安心を誘う設計にしました。これにより、「こんな自分でも良いんだ」と思える自己受容のきっかけになると考えました。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 技術スタック
+- Rails7系
+- Tailwind CSS / DaisyUI
+- Chart.js
+- PostgreSQL
+- Render

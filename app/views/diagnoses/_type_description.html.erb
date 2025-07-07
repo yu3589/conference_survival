@@ -1,0 +1,52 @@
+<div class="flex justify-center p-2">
+  <div class="rounded-3xl ring-2 ring-secondary text-center text-neutral p-4">
+    <% case @diagnosis.result_type.to_sym %>
+    <% when :stealth %>
+      <div class="text-center md:text-3xl pb-4">
+        🤓
+      </div>
+      <div class="pb-2">
+        手元では別のタスク、顔では真剣参加。器用さと生き抜き力に長けたサバイバー。
+      </div>
+    <% when :fade %>
+      <div class="text-center text-xl md:text-3xl pb-2">
+        😶‍🌫️
+      </div>
+      <div class="pb-2">
+        空気を読む…のではなく“空気に溶ける”。まるで会議室の一部かのように存在を消すサバイバー。
+      </div>
+    <% when :nod %>
+      <div class="text-center text-xl md:text-3xl pb-2">
+        🙂‍↕️
+      </div>
+      <div class="pb-2">
+        話の内容より、うなずきのリズムが大事。言葉より相槌で存在感を出すサバイバー。
+      </div>
+    <% when :sharpness %>
+      <div class="text-center text-xl md:text-3xl pb-2">
+        🤩
+      </div>
+      <div class="pb-2">
+        普段は眠ってる天才肌。会議終盤に突然覚醒。“ここぞ”で目覚める逆転サバイバー。
+      </div>
+    <% when :sleepiness %>
+      <div class="text-center text-xl md:text-3xl pb-2">
+        😴
+      </div>
+      <div class="pb-2">
+        会議中に意識がふわっと浮いていく名人芸。議事録を見て初めて会議内容を知ることも。<br>まばたきの合間を生きるサバイバー。
+      </div>
+    <% when :balance %>
+      <div class="text-center text-xl md:text-3xl pb-2">
+        😎
+      </div>
+      <div class="pb-2">
+        特定のスキルに偏らず、どんな会議シーンでもそつなく対応する安定型サバイバー。
+      </div>
+    <% else %>
+      <div class="pb-2">
+        会議に適応するスキルで静かに光る万能サバイバー。
+      </div>
+    <% end %>
+  </div>
+</div>

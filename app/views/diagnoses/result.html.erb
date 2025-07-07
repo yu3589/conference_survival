@@ -3,23 +3,28 @@
 <% end %>
 
 <div class="p-2 md:p-6">
-  <div class="font-bold text-3xl text-neutral text-center pt-6">
+  <div class="font-bold text-xl md:text-2xl text-neutral text-center pt-4">
+    会議サバイバルスキル
+  </div>
+  <div class="font-bold text-xl md:text-2xl text-neutral text-center p-2">
     🎯 診断結果
   </div>
-    <div class="px-12 py-12 text-center text-neutral">
+    <div class="px-12 py-4 md:py-6 text-center text-neutral">
     <div class="flex justify-center items-end flex-wrap gap-1 md:gap-2 text-base">
         <span>あなたは...</span>
-        <span class="font-bold text-xl md:text-3xl text-primary pt-2">
+        <span class="font-bold text-2xl md:text-3xl text-primary pt-2">
         <%= @diagnosis.result_type_label %>
         </span>
         <span class="text-base text-neutral">
         でした！</span>
     </div>
     </div>
+
+    <%= render "diagnoses/type_description" %>
   
-    <div class="flex justify-center">
+    <div class="flex justify-center p-4">
         <div class="w-full max-w-md">
-        <div class="p-4 border-gray-300 rounded-2xl bg-base-200">
+        <div class="p-4 border-secondary rounded-3xl bg-base-100">
             <%= render "shared/chart",
             chart_id: "radarChart",
             data: [
@@ -33,7 +38,7 @@
         </div>
     </div>
       <div class="flex justify-center pt-4">
-        <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}diagnosis/#{@result_type}/#{@diagnosis.token}&text=#{CGI.escape("診断結果は【#{@diagnosis.result_type_label}】でした！\n#会議サバイバル診断 #会サバ")}",
+        <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}diagnosis/#{@result_type}/#{@diagnosis.token}&text=#{CGI.escape("診断結果は【#{@diagnosis.result_type_label}】でした！\n\n#会議サバイバル診断 #会サバ")}",
         target: "_blank",
         rel: "noopener noreferrer",
         class: "btn btn-accent rounded-xl p-8 text-center" do %>
@@ -43,8 +48,8 @@
       </div>
 
     <div class="flex justify-center gap-4 p-8">
-    <%= link_to "もう一度診断する", new_diagnosis_path, class: "btn btn-secondary rounded-xl px-6 py-6 text-center" %>
-    <%= link_to "トップに戻る", root_path, data: { turbo: false }, class: "btn btn-primary rounded-xl px-6 py-6 text-center" %>
+      <%= link_to "もう一度診断する", new_diagnosis_path, class: "btn btn-secondary rounded-xl p-7 text-center" %>
+      <%= link_to "トップに戻る", root_path, data: { turbo: false }, class: "btn btn-primary rounded-xl p-7 text-center" %>
     </div>
  </div>
 

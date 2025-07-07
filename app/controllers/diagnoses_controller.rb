@@ -4,10 +4,10 @@ class DiagnosesController < ApplicationController
   end
 
    def question_params
-      params.require(:answers).permit(:question1, :question2, :question3, :question4, :question5).to_h
+      params.require(:answers).permit(:question1, :question2, :question3, :question4, :question5, :question6, :question7, :question8).to_h
    end
 
-  EXPECTED_QUESTION_COUNT = 5
+  EXPECTED_QUESTION_COUNT = 8
 
   def create
     selected_answers = question_params
@@ -32,15 +32,15 @@ class DiagnosesController < ApplicationController
 
   def calculate_scores(answer_params)
     result = {
-    sharpness_score: 0,
-    sleepiness_score: 0,
-    nod_score: 0,
-    stealth_score: 0,
-    fade_score: 0
-  }
+      sharpness_score: 0,
+      sleepiness_score: 0,
+      nod_score: 0,
+      stealth_score: 0,
+      fade_score: 0
+    }
 
     answer_params.each do |_, value|
-      next if value.blank?  # 念のため
+      next if value.blank?
       value.split(",").each do |item|
         type, score = item.split(":")
         key = "#{type}_score".to_sym
@@ -48,8 +48,19 @@ class DiagnosesController < ApplicationController
       end
     end
 
+    max_score = result.values.max.to_f
+    min_score = 5
+
+    if max_score > 0
+      result.each do |k, v|
+        normalized = (v / max_score * 100).round(1)
+        result[k] = normalized > 0 ? normalized : min_score
+      end
+    end
+
     result
   end
+
 
   def result
     @diagnosis = Diagnosis.find_by(token: params[:token])

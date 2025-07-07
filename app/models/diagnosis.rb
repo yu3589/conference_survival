@@ -1,6 +1,6 @@
 class Diagnosis < ApplicationRecord
   before_create :generate_token
-  before_save :set_result_type
+  before_validation :set_result_type
 
   enum result_type: {
     sharpness: 0,
@@ -10,27 +10,38 @@ class Diagnosis < ApplicationRecord
     fade: 4,
     balance: 5
   }
+
   def generate_token
     loop do
-      # ランダムの英数字(A-Z, a-z, 0-9)を6桁生成
-      self.token = SecureRandom.alphanumeric(6)
+      # ランダムの英数字(A-Z, a-z, 0-9)を8桁生成
+      self.token = SecureRandom.alphanumeric(8)
       break unless Diagnosis.exists?(token: token)
     end
   end
 
   def set_result_type
-    if sharpness_score >= 4
-      self.result_type = :sharpness
-    elsif sleepiness_score >= 4
-      self.result_type = :sleepiness
-    elsif nod_score >= 4
-      self.result_type = :nod
-    elsif stealth_score >= 4
-      self.result_type = :stealth
-    elsif fade_score >= 4
-      self.result_type = :fade
-    else
+    threshold = 70
+    scores = {
+      sharpness: sharpness_score,
+      sleepiness: sleepiness_score,
+      nod: nod_score,
+      stealth: stealth_score,
+      fade: fade_score
+    }
+
+    max_type, max_score = scores.max_by { |_, v| v }
+
+    # 最大スコアが閾値未満ならbalance
+    return self.result_type = :balance if max_score < threshold
+
+    # 2番目に高いスコアとの差を計算
+    sorted_scores = scores.values.sort.reverse
+    second_score = sorted_scores[1] || 0
+
+    if max_score - second_score < 15
       self.result_type = :balance
+    else
+      self.result_type = max_type
     end
   end
 

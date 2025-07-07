@@ -63,18 +63,18 @@
           <span>「ちょっと気になったんですが…」と、さらに脱線を深める話題を放り込む</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
-          <%= radio_button_tag "answers[question2]", "nod:20,stealth:5",
-            @selected_answers&.dig("question2") == "nod:20,stealth:5",
+          <%= radio_button_tag "answers[question2]", "nod:15,stealth:10",
+            @selected_answers&.dig("question2") == "nod:15,stealth:10",
             class: "radio radio-secondary radio-sm" %>
-          <span>Slackで別の人と「これ長くない？」と内輪DMを始める</span>
+          <span>Slackで別の人と内輪DMを始める</span>
         </label>
       </div>
 
       <div class="w-full max-w-md mx-auto p-6 md:max-w-none md:mx-0">
         <div class="label-text mb-3 font-bold md:text-xl">第3問：「◯◯さんどう思います？」と急に振られた！</div>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
-          <%= radio_button_tag "answers[question3]", "nod:25",
-            @selected_answers&.dig("question3") == "nod:25",
+          <%= radio_button_tag "answers[question3]", "nod:15,stealth:10",
+            @selected_answers&.dig("question3") == "nod:15,stealth:10",
             class: "radio radio-secondary  radio-sm" %>
           <span> 急に咳き込むフリで時間を稼ぐ</span>
         </label>
@@ -123,8 +123,8 @@
           <span> 言いたいことはあるけど、なかなか送信ボタンが押せない</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
-          <%= radio_button_tag "answers[question5]", "nod:20,stealth:5",
-          @selected_answers&.dig("question5") == "nod:20,stealth:5",
+          <%= radio_button_tag "answers[question5]", "nod:15,stealth:10",
+          @selected_answers&.dig("question5") == "nod:15,stealth:10",
           class: "radio radio-secondary radio-sm" %>
           <span>「承知しました（Ctrl+C）」→ Ctrl+V連打で“在席感”キープ</span>
         </label>
@@ -183,8 +183,8 @@
       <div class="w-full max-w-md mx-auto p-6 md:max-w-none md:mx-0">
         <div class="label-text mb-3 font-bold md:text-xl">第8問：会議に「参加してた感」を残したい…何する？</div>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
-          <%= radio_button_tag "answers[question8]", "nod:25",
-          @selected_answers&.dig("question8") == "nod:25",
+          <%= radio_button_tag "answers[question8]", "nod:15,stealth:10",
+          @selected_answers&.dig("question8") == "nod:15,stealth:10",
             class: "radio radio-secondary radio-sm" %>
           <span>最後に「ありがとうございました！」とコメント</span>
         </label>

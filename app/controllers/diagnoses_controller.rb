@@ -1,4 +1,8 @@
 class DiagnosesController < ApplicationController
+  require "yaml"
+  before_action :set_diagnosis_status
+  before_action :set_status, only: [ :new ]
+
   def new
     @diagnosis = Diagnosis.new
   end
@@ -90,5 +94,17 @@ class DiagnosesController < ApplicationController
     else
       "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857399/balance_s5ksih.png"
     end
+  end
+
+  private
+
+  def set_diagnosis_status
+    @status = YAML.load_file(Rails.root.join("config", "status.yml"))
+  end
+
+  def set_status
+    @status_1 = @status["status_1"]&.sample
+    @status_2 = @status["status_2"]&.sample
+    @status_3 = @status["status_3"]&.sample
   end
 end

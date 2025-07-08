@@ -12,15 +12,15 @@
         あなたのステータス
       </div>
       <div class="collapse-content text-left text-sm">
-        <div>・連勤：5日目</div>
-        <div>・集中力：7%</div>
-        <div>・二日酔いレベル：高</div>
+        <div>・<%= @status_1 %></div>
+        <div>・<%= @status_2 %></div>
+        <div>・<%= @status_3 %></div>
         <div class="mt-2">※ リモートで参加中</div>
       </div>
     </div>
   </div>
 
-    <fieldset class="form-control text-left text-neutral md:bg-base-200 rounded-4xl m-4 p-2 md:p-6 w-full max-w-full overflow-hidden">
+    <fieldset class="form-control text-left text-neutral md:bg-base-200 rounded-4xl m-4 p-2 md:px-16 md:py-6 w-full max-w-full min-w-0 overflow-hidden">
   
       <div class="w-full max-w-md mx-auto p-6 md:max-w-none md:mx-0">
         <div class="label-text mb-3 font-bold md:text-xl">
@@ -82,7 +82,7 @@
           <%= radio_button_tag "answers[question3]", "sleepiness:5,stealth:20",
             @selected_answers&.dig("question3") == "sleepiness:5,stealth:20",
             class: "radio radio-secondary radio-sm" %>
-          <span>「ちょうど資料探してて…」と画面共有で逃げる</span>
+          <span class="break-words whitespace-normal">ワンテンポ遅れて「自分ですか？」と聞き返す</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question3]", "sharpness:5,fade:20",
@@ -98,19 +98,19 @@
           <%= radio_button_tag "answers[question4]", "stealth:25",
             @selected_answers&.dig("question4") == "stealth:25",
             class: "radio radio-secondary radio-sm" %>
-          <span>「議事録、もはや短歌でまとめた方が早くない？」</span>
+          <span>議事録、もはや短歌でまとめた方が早くない？</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question4]", "fade:20,sharpness:5",
             @selected_answers&.dig("question4") == "fade:20,sharpness:5",
             class: "radio radio-secondary radio-sm" %>
-          <span>「この議題、あと7周くらい回す気か…？」</span>
+          <span>この議題、あと7周くらい回す気か…？</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question4]", "sleepiness:20,nod:5",
             @selected_answers&.dig("question4") == "sleepiness:20,nod:5",
             class: "radio radio-secondary radio-sm" %>
-          <span>「あと何分…あと何分…（時計チラ見×5）」</span>
+          <span>あと何分…あと何分…(時計チラ見×5)</span>
         </label>
       </div>
 
@@ -142,7 +142,7 @@
           <%= radio_button_tag "answers[question6]", "sharpness:20,nod:5",
           @selected_answers&.dig("question6") == "sharpness:20,nod:5",
             class: "radio radio-secondary radio-sm" %>
-          <span>「みんなで考えていきましょう！」と丸める</span>
+          <span>「この点だけ決めませんか？」とまとめに入る</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question6]", "sleepiness:20,stealth:5",
@@ -154,7 +154,7 @@
           <%= radio_button_tag "answers[question6]", "fade:20",
           @selected_answers&.dig("question6") == "fade:20",
             class: "radio radio-secondary radio-sm" %>
-          <span>「この点だけ決めませんか？」とまとめに入る </span>
+          <span>「みんなで考えていきましょう！」と丸める</span>
         </label>
       </div>
 
@@ -176,29 +176,29 @@
           <%= radio_button_tag "answers[question7]", "stealth:5,nod:15",
           @selected_answers&.dig("question7") == "stealth:5,nod:15",
             class: "radio radio-secondary radio-sm" %>
-          <span class="break-words whitespace-normal">心の中で「この会議、ファイナルラウンド…！」と願う</span>
+          <span class="break-words whitespace-normal">心の中で「これでファイナルラウンド…！」と願う</span>
         </label>
       </div>
 
       <div class="w-full max-w-md mx-auto p-6 md:max-w-none md:mx-0">
-        <div class="label-text mb-3 font-bold md:text-xl">第8問：会議に「参加してた感」を残したい…何する？</div>
+        <div class="label-text mb-3 font-bold md:text-xl">第8問：会議に「参加してた感」を残したい。何する？</div>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question8]", "nod:15,stealth:10",
           @selected_answers&.dig("question8") == "nod:15,stealth:10",
             class: "radio radio-secondary radio-sm" %>
-          <span>最後に「ありがとうございました！」とコメント</span>
+          <span>みんなの発言に「👍」連打</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question8]", "stealth:15,sleepiness:10",
           @selected_answers&.dig("question8") == "stealth:15,sleepiness:10",
           class: "radio radio-secondary radio-sm" %>
-          <span>終了2分前にだけ一生懸命メモを取る仕草をする</span>
+          <span>最後だけ一生懸命メモを取る仕草をする</span>
         </label>
         <label class="label cursor-pointer flex items-center space-x-3 text-neutral py-1 md:hover:bg-neutral-content">
           <%= radio_button_tag "answers[question8]", "fade:20",
           @selected_answers&.dig("question8") == "fade:20",
             class: "radio radio-secondary radio-sm" %>
-          <span>みんなの発言に「👍」連打</span>
+          <span>最後に「ありがとうございました！」とコメント</span>
         </label>
       </div>
     </fieldset>

@@ -19,6 +19,16 @@
     <%= yield :meta_tags %>
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLETHKWYYZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BLETHKWYYZ');
+  </script>
+
   <body class="flex flex-col min-h-screen bg-neutral-content">
     <div class="flex-grow">
       <%= yield %>

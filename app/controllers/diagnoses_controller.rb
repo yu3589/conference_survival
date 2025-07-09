@@ -20,6 +20,10 @@ class DiagnosesController < ApplicationController
       flash.now[:alert] = "全ての設問に回答してください。"
       @diagnosis = Diagnosis.new
       @selected_answers = selected_answers
+
+      @status_1 = session[:status_1]
+      @status_2 = session[:status_2]
+      @status_3 = session[:status_3]
       render :new, status: :unprocessable_entity
       return
     end
@@ -103,8 +107,12 @@ class DiagnosesController < ApplicationController
   end
 
   def set_status
-    @status_1 = @status["status_1"]&.sample
-    @status_2 = @status["status_2"]&.sample
-    @status_3 = @status["status_3"]&.sample
+    session[:status_1] = @status["status_1"]&.sample
+    session[:status_2] = @status["status_2"]&.sample
+    session[:status_3] = @status["status_3"]&.sample
+
+    @status_1 = session[:status_1]
+    @status_2 = session[:status_2]
+    @status_3 = session[:status_3]
   end
 end

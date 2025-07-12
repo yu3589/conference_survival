@@ -98,6 +98,7 @@ class DiagnosesController < ApplicationController
     else
       "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857399/balance_s5ksih.png"
     end
+    set_meta_tags(default_meta_tags(url: @url))
   end
 
   private

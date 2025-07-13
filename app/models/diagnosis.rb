@@ -35,7 +35,7 @@ class Diagnosis < ApplicationRecord
 
     if scores.values.all? { |v| v >= 50 }
       self.result_type = :balance
-    elsif max_score - second_score < 5 && max_score >= threshold
+    elsif max_score - second_score < 3 && max_score >= threshold
       self.result_type = :balance
     else
       self.result_type = max_type

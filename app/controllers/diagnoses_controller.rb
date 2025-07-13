@@ -88,7 +88,7 @@ class DiagnosesController < ApplicationController
     when :stealth
       "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857394/stealth_oh6x3o.png"
     when :fade
-      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857391/fade_pxcskz.png"
+      "https://res.cloudinary.com/dbar0jd0k/image/upload/v1752378744/fade_xmnjvq.png"
     when :nod
       "https://res.cloudinary.com/dbar0jd0k/image/upload/v1751857387/nod_v7bt3k.png"
     when :sharpness

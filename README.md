@@ -1,6 +1,6 @@
 # [会議サバイバル診断](https://conference-survival.onrender.com/)
 
-[![Image from Gyazo](https://i.gyazo.com/8bb67653dbf1953e4b5b098b6ae0d7c1.jpg)](https://gyazo.com/8bb67653dbf1953e4b5b098b6ae0d7c1)
+[![Image from Gyazo](https://i.gyazo.com/779cfb41d6bbaef32972b422cb931965.png)](https://gyazo.com/779cfb41d6bbaef32972b422cb931965)
 ## ■サービス概要
 長時間会議を生き抜くあなたの“会議サバイバルスキル”を診断。眠気や空気読みも武器に変えて、強みをユーモアで可視化します。
 
